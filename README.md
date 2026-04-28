@@ -1,0 +1,1 @@
+AI Powered Digital Asset Pro System is an intelligent platform designed to manage, secure, and optimize digital assets using Artificial Intelligence. It helps users organize files, track assets, enhance security, and improve productivity through smart automation. Developed for Google Solution Challenge 2026.
