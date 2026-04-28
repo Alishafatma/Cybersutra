@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>UPI Fraud Awareness</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#eef2f7;
+}
+
+/* CONTAINER */
+.container{
+max-width:1050px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.hero img{
+width:260px;
+}
+
+h1{
+color:#4f46e5;
+margin:0;
+}
+
+.sub{
+color:#64748b;
+margin-top:6px;
+}
+
+/* INFO POINTS */
+.points{
+margin-top:10px;
+}
+
+.points p{
+margin:5px 0;
+}
+
+/* SECTION */
+.section{
+background:#f8fafc;
+padding:18px;
+border-radius:16px;
+margin-top:20px;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+gap:15px;
+margin-top:15px;
+}
+
+.feature{
+flex:1;
+background:white;
+padding:18px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.feature img{
+width:45px;
+margin-bottom:10px;
+}
+
+/* FLOW (FORCED SINGLE LINE) */
+.flow{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:20px;
+flex-wrap:nowrap;
+overflow-x:auto;
+}
+
+.step{
+min-width:150px;
+background:white;
+padding:15px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+position:relative;
+}
+
+.step img{
+width:55px;
+margin-bottom:8px;
+}
+
+.num{
+position:absolute;
+top:-10px;
+left:10px;
+background:#6366f1;
+color:white;
+width:25px;
+height:25px;
+border-radius:50%;
+font-size:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.arrow{
+font-size:20px;
+color:#6366f1;
+}
+
+/* WARNING + SAFETY */
+.flex{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.warn{
+flex:1;
+background:#fee2e2;
+padding:15px;
+border-radius:14px;
+font-size:14px;
+}
+
+.safe{
+flex:1;
+background:#dcfce7;
+padding:15px;
+border-radius:14px;
+font-size:14px;
+}
+
+.safe li::before{
+content:"✔ ";
+color:green;
+}
+
+.warn img,.safe img{
+width:90px;
+display:block;
+margin:auto;
+margin-top:10px;
+}
+
+/* QUIZ */
+.quiz{
+background:#ede9fe;
+padding:15px;
+border-radius:14px;
+margin-top:20px;
+text-align:center;
+}
+
+button{
+padding:10px 14px;
+border:none;
+border-radius:8px;
+background:#6366f1;
+color:white;
+cursor:pointer;
+margin:5px;
+}
+
+/* FOOTER */
+.footer{
+margin-top:20px;
+background:#eef2ff;
+padding:15px;
+border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.footer img{
+width:120px;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:#4f46e5;
+color:white;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>💸 UPI Fraud Awareness</h1>
+<p class="sub">Learn. Stay Alert. Stay Safe.</p>
+
+<div class="points">
+<p>✔ UPI makes payments easy, fast and secure.</p>
+<p>⚠ But scammers are finding new ways to cheat people.</p>
+<p>💡 Awareness today can save your money tomorrow.</p>
+</div>
+
+</div>
+
+<div>
+    <img src="Screenshot 2026-04-24 133447.png">
+</div>
+
+</div>
+
+<!-- WHAT IS UPI -->
+<div class="section">
+<h3>🏦 What is UPI?</h3>
+
+<p>
+UPI (Unified Payments Interface) is a digital payment system in India that allows you to send or receive money instantly using your mobile phone.
+You only need a UPI ID (like name@bank) or scan a QR code.
+</p>
+
+<div class="features">
+<div class="feature">
+<img src="https://cdn-icons-png.flaticon.com/512/891/891419.png">
+<p>Send Money instantly</p>
+</div>
+
+<div class="feature">
+<img src="https://cdn-icons-png.flaticon.com/512/633/633611.png">
+<p>Scan & Pay anywhere</p>
+</div>
+
+<div class="feature">
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
+<p>Directly from bank</p>
+</div>
+</div>
+
+</div>
+
+<!-- FLOW -->
+<div class="section">
+<h3>⚠️ How UPI Fraud Happens</h3>
+
+<div class="flow">
+
+<div class="step">
+<div class="num">1</div>
+<img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png">
+<p>You receive a fake collect request</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<div class="num">2</div>
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+<p>Scammer says “Accept to receive money”</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<div class="num">3</div>
+<img src="https://cdn-icons-png.flaticon.com/512/565/565547.png">
+<p>You enter your UPI PIN</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<div class="num">4</div>
+<img src="https://cdn-icons-png.flaticon.com/512/2331/2331941.png">
+<p>Money gets deducted</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<div class="num">5</div>
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png">
+<p>You become a victim of fraud</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- WARNING + SAFETY -->
+<div class="flex">
+
+<div class="warn">
+<h3>❌ Warning Signs</h3>
+<ul>
+<li>Unknown payment requests</li>
+<li>Urgency / pressure</li>
+<li>Asking for PIN / OTP</li>
+<li>Fake customer care calls</li>
+</ul>
+<img src="https://cdn-icons-png.flaticon.com/512/564/564619.png">
+</div>
+
+<div class="safe">
+<h3>✅ Safety Tips</h3>
+<ul>
+<li>UPI PIN is only for sending money</li>
+<li>Never approve unknown requests</li>
+<li>Never share your PIN / OTP</li>
+<li>Always verify before payment</li>
+</ul>
+<img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png">
+</div>
+
+</div>
+
+<!-- QUIZ -->
+<div class="quiz">
+<h3>🧠 Quick Quiz</h3>
+<p>When do you use UPI PIN?</p>
+
+<button onclick="check('correct')">While sending money</button>
+<button onclick="check('wrong')">While receiving money</button>
+
+<p id="result"></p>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<p>💡 Stay alert, stay safe!</p>
+<button onclick="history.back()">⬅ Back</button>
+</div>
+
+</div>
+
+<script>
+function check(ans){
+let r=document.getElementById("result");
+
+if(ans==="correct"){
+r.innerText="Correct ✅";
+r.style.color="green";
+}else{
+r.innerText="Wrong ❌";
+r.style.color="red";
+}
+}
+</script>
+
+</body>
+</html>

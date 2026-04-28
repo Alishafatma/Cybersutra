@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Login</title>
+<!-- Google Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+<style>
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+/* BACKGROUND */
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background-image:url("https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1974&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
+}
+/* DARK OVERLAY */
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+
+background:rgba(0,0,40,0.55);
+
+backdrop-filter:blur(2px);
+
+}
+
+
+/* LOGIN CARD */
+
+.card{
+
+position:relative;
+
+width:350px;
+
+padding:35px;
+
+border-radius:18px;
+
+background:rgba(255,255,255,0.10);
+
+backdrop-filter:blur(18px);
+
+box-shadow:0px 0px 35px rgba(0,0,0,0.4);
+
+color:white;
+
+z-index:2;
+
+}
+
+
+/* TITLE */
+
+.title{
+
+text-align:center;
+
+font-size:22px;
+
+margin-bottom:20px;
+
+}
+
+
+/* INPUT BOX */
+
+.inputBox{
+
+margin-bottom:15px;
+
+position:relative;
+
+}
+
+
+.inputBox input{
+
+width:100%;
+
+padding:12px 40px;
+
+border-radius:10px;
+
+border:none;
+
+background:rgba(255,255,255,0.15);
+
+color:white;
+
+font-size:14px;
+
+outline:none;
+
+}
+
+
+/* ICON LEFT */
+
+.leftIcon{
+
+position:absolute;
+
+left:10px;
+
+top:10px;
+
+}
+
+
+/* ICON RIGHT */
+
+.rightIcon{
+
+position:absolute;
+
+right:10px;
+
+top:10px;
+
+cursor:pointer;
+
+}
+
+
+/* REMEMBER + FORGOT */
+
+.options{
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:13px;
+
+margin-bottom:15px;
+
+}
+
+
+.options a{
+
+color:#00ffff;
+
+text-decoration:none;
+
+}
+
+
+/* LOGIN BUTTON */
+
+.loginBtn{
+
+width:100%;
+
+padding:12px;
+
+border:none;
+
+border-radius:30px;
+
+font-size:16px;
+
+color:white;
+
+cursor:pointer;
+
+background:linear-gradient(
+90deg,
+#00ffff,
+#8a2be2
+);
+
+margin-bottom:12px;
+
+}
+
+
+/* GOOGLE BUTTON */
+
+.googleBtn{
+
+width:100%;
+
+padding:10px;
+
+border:none;
+
+border-radius:30px;
+
+font-size:15px;
+
+cursor:pointer;
+
+background:white;
+
+color:black;
+
+margin-bottom:10px;
+
+}
+
+
+/* REGISTER LINK */
+
+.register{
+
+text-align:center;
+
+font-size:14px;
+
+}
+
+
+.register a{
+
+color:#00ffff;
+
+text-decoration:none;
+
+}
+
+
+/* FULLSCREEN IMAGE PREVIEW */
+
+.fullscreen{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:black;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:10;
+
+}
+
+
+.fullscreen img{
+
+max-width:95%;
+
+max-height:95%;
+
+}
+
+
+.closeBtn{
+
+position:absolute;
+
+top:20px;
+
+right:30px;
+
+color:white;
+
+font-size:35px;
+
+cursor:pointer;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- DARK BACKGROUND CLICKABLE -->
+
+<div class="overlay"
+onclick="openPreview()"></div>
+
+
+<!-- LOGIN CARD -->
+
+<div class="card">
+
+<h2 class="title">
+
+🛡 Stay Safe. Login Securely
+
+</h2>
+
+
+<!-- EMAIL -->
+
+<div class="inputBox">
+
+<span class="material-icons leftIcon">
+
+email
+
+</span>
+
+<input
+type="email"
+placeholder="Email">
+
+</div>
+
+
+<!-- PASSWORD -->
+
+<div class="inputBox">
+
+<span class="material-icons leftIcon">
+
+lock
+
+</span>
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<span
+class="material-icons rightIcon"
+onclick="togglePassword()">
+
+visibility
+
+</span>
+
+</div>
+
+
+<!-- OPTIONS -->
+
+<div class="options">
+
+<label>
+
+<input type="checkbox">
+
+Remember me
+
+</label>
+<a href="forgot password.html">Forgot password?</a>
+</div>
+
+
+<!-- LOGIN BUTTON -->
+
+<button
+class="loginBtn">
+
+Login
+
+</button>
+
+
+<!-- GOOGLE BUTTON -->
+
+<button
+class="googleBtn">
+
+Continue with Google
+
+</button>
+
+
+<!-- REGISTER -->
+
+<div class="register">
+
+Don't have account?
+
+<a href="register.html">Register</a>
+
+
+
+</a>
+
+</div>
+
+
+</div>
+
+
+
+<!-- FULLSCREEN BACKGROUND IMAGE VIEWER -->
+
+<div
+class="fullscreen"
+id="preview">
+
+<span
+class="closeBtn"
+onclick="closePreview()">
+
+✖
+
+</span>
+
+<img
+src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+
+</div>
+
+
+
+<script>
+
+
+/* PASSWORD TOGGLE */
+
+function togglePassword(){
+
+let pass=document.getElementById("password")
+
+if(pass.type==="password"){
+
+pass.type="text"
+
+}
+
+else{
+
+pass.type="password"
+
+}
+
+}
+
+
+
+/* OPEN BACKGROUND FULLSCREEN */
+
+function openPreview(){
+
+document
+.getElementById("preview")
+.style.display="flex"
+
+}
+
+
+
+/* CLOSE BACKGROUND FULLSCREEN */
+
+function closePreview(){
+
+document
+.getElementById("preview")
+.style.display="none"
+
+}
+
+
+</script>
+
+</body>
+</html>

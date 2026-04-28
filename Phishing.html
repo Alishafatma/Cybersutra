@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Phishing Scam Awareness</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#eef2ff,#f0f9ff,#fdf4ff);
+}
+
+.container{
+max-width:1000px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:22px;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+}
+
+.hero img{
+width:180px;
+border-radius:12px;
+}
+
+h1{
+color:#4f46e5;
+margin:0;
+}
+
+.sub{
+color:#64748b;
+margin-top:6px;
+}
+
+/* SECTION */
+.section{
+background:#f8fafc;
+padding:20px;
+border-radius:18px;
+margin-top:20px;
+}
+
+/* CARDS */
+.cards{
+display:flex;
+gap:15px;
+margin-top:15px;
+}
+
+.card{
+flex:1;
+background:white;
+padding:16px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 6px 15px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:45px;
+margin-bottom:10px;
+}
+
+/* FLOW */
+.flow{
+display:flex;
+gap:10px;
+overflow-x:auto;
+align-items:center;
+margin-top:15px;
+}
+
+.step{
+min-width:150px;
+background:white;
+padding:14px;
+border-radius:14px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+.step img{
+width:50px;
+margin-bottom:6px;
+}
+
+.arrow{
+font-size:22px;
+color:#6366f1;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:0.3}
+50%{opacity:1}
+100%{opacity:0.3}
+}
+
+/* COMPARE */
+.compare{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.box{
+flex:1;
+padding:16px;
+border-radius:16px;
+}
+
+.fake{
+background:linear-gradient(135deg,#fee2e2,#fecaca);
+}
+
+.real{
+background:linear-gradient(135deg,#dcfce7,#bbf7d0);
+}
+
+/* EXAMPLES */
+.examples{
+margin-top:15px;
+}
+
+.examples li{
+margin-bottom:8px;
+}
+
+/* FOOTER */
+.footer{
+margin-top:20px;
+text-align:center;
+color:#64748b;
+}
+
+button{
+padding:10px 16px;
+border:none;
+border-radius:10px;
+background:#4f46e5;
+color:white;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>🎣 Phishing Scam</h1>
+<p class="sub">Think Before You Click</p>
+
+<p>
+Fake messages or websites try to steal your password, OTP or data.
+</p>
+
+</div>
+
+<!-- SMALL IMAGE (replacing lock) -->
+
+<img src="Screenshot 2026-04-24 134907.png">
+</div>
+
+<!-- WHAT IS -->
+<div class="section">
+
+<h3>📘 What is Phishing?</h3>
+
+<p>
+Phishing is a scam where attackers create fake websites, emails or messages 
+that look real to steal your information.
+</p>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+<p>Fake Email</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/545/545705.png">
+<p>Fake Website</p>
+</div>
+
+<div class="card">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png">
+<p>Password Theft</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- FLOW -->
+<div class="section">
+
+<h3>⚠️ How Phishing Works</h3>
+
+<div class="flow">
+
+<div class="step">
+<img src="https://cdn-icons-png.flaticon.com/512/561/561127.png">
+<p>You get fake message</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<img src="https://cdn-icons-png.flaticon.com/512/545/545705.png">
+<p>Looks like real site</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png">
+<p>You enter details</p>
+</div>
+
+<div class="arrow">➡️</div>
+
+<div class="step">
+<img src="https://cdn-icons-png.flaticon.com/512/1828/1828665.png">
+<p>Data stolen ❌</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- FAKE VS REAL -->
+<div class="compare">
+
+<div class="box fake">
+<h3>❌ Fake</h3>
+<ul>
+<li>Strange URL</li>
+<li>Spelling mistakes</li>
+<li>Urgent message</li>
+<li>Unknown sender</li>
+</ul>
+</div>
+
+<div class="box real">
+<h3>✅ Real</h3>
+<ul>
+<li>Official domain</li>
+<li>No pressure</li>
+<li>Verified sender</li>
+<li>Secure connection 🔒</li>
+</ul>
+</div>
+
+</div>
+
+<!-- REAL EXAMPLES -->
+<div class="section">
+
+<h3>📌 Real Life Examples</h3>
+
+<ul class="examples">
+<li>"Your bank account will be blocked! Click here"</li>
+<li>"You won ₹10,000 reward – claim now"</li>
+<li>"Update your KYC immediately"</li>
+<li>"Login link from fake website"</li>
+</ul>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+💡 Stay alert, stay safe
+<br><br>
+<button onclick="history.back()">⬅ Back</button>
+</div>
+
+</div>
+
+</body>
+</html>

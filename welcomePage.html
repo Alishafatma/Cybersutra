@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- CYBER FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
+<title>cypherNest</title>
+<style>*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Orbitron', sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#05080f;
+}
+
+/* PHONE */
+.phone{
+    width:320px;
+    height:640px;
+    border-radius:32px;
+    border:2px solid rgba(255,255,255,0.2);
+    overflow:hidden;
+    position:relative;
+    background:#02050c;
+    box-shadow:0 0 50px rgba(0,255,255,0.15);
+}
+
+/* 🔥 CYBER BACKGROUND */
+.bg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    
+    background:
+    radial-gradient(circle at 20% 20%, #00eaff22, transparent 40%),
+    radial-gradient(circle at 80% 80%, #00eaff22, transparent 40%),
+    linear-gradient(180deg,#02050c,#031a2c);
+}
+
+/* particles */
+.bg::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-image:
+        radial-gradient(#00eaff55 1px, transparent 1px);
+    background-size: 25px 25px;
+    opacity:0.25;
+}
+
+/* glowing lines */
+.bg::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+        linear-gradient(120deg, transparent 40%, #00eaff22, transparent 60%);
+    animation: glowMove 6s linear infinite;
+}
+
+@keyframes glowMove{
+    0%{transform:translateX(-100%)}
+    100%{transform:translateX(100%)}
+}
+
+/* CENTER */
+.content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+/* 🔐 LOGO */
+.logo-svg{
+    width:90px;
+    height:90px;
+    fill:none;
+    stroke:#00eaff;
+    stroke-width:2.5;
+    filter: drop-shadow(0 0 10px #00eaff) drop-shadow(0 0 25px #00eaff);
+}
+
+/* TITLE */
+h1{
+    margin-top:20px;
+    font-size:28px;
+    color:#e5e7eb;
+    letter-spacing:2px;
+}
+
+h1 span{
+    color:#00eaff;
+    text-shadow:0 0 15px #00eaff;
+}
+
+/* LINE */
+.line{
+    width:130px;
+    height:2px;
+    margin:12px auto;
+    background:linear-gradient(90deg,transparent,#00eaff,transparent);
+    box-shadow:0 0 12px #00eaff;
+}
+
+/* TEXT */
+p{
+    color:#9fdcff;
+    font-size:12px;
+    letter-spacing:1px;
+}</style>
+</head>
+<body>
+
+<div class="phone">
+
+    <!-- background -->
+    <div class="bg"></div>
+
+    <div class="content">
+
+        <!-- NEW SHIELD LOGO -->
+        <div class="logo">
+            <svg viewBox="0 0 100 100" class="logo-svg">
+                <!-- shield -->
+                <path d="M50 5 L85 20 V45 C85 70 65 90 50 95 C35 90 15 70 15 45 V20 Z"/>
+                
+                <!-- lock -->
+                <rect x="35" y="45" width="30" height="25" rx="5"/>
+                <path d="M40 45 V35 a10 10 0 0 1 20 0 v10"/>
+                <circle cx="50" cy="57" r="3"/>
+            </svg>
+        </div>
+
+        <h1>cypher<span>Nest</span></h1>
+
+        <div class="line"></div>
+
+        <p>Protect Your Digital Realm</p>
+        <br>
+        <a href="sign in.html">Get Started</a>
+    </div>
+
+</div>
+
+</body>
+</html>

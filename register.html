@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background-size:cover;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+background-image:url("https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1974&auto=format&fit=crop");
+background-size:cover;
+overflow:hidden;
+}
+
+/* GLOW BACKGROUND */
+body::before{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:linear-gradient(45deg,#00c6ff,#0072ff);
+filter:blur(120px);
+top:-100px;
+left:-100px;
+opacity:0.6;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:linear-gradient(45deg,#ff00cc,#3333ff);
+filter:blur(120px);
+bottom:-100px;
+right:-100px;
+opacity:0.6;
+}
+
+/* CARD */
+.container{
+width:360px;
+padding:30px;
+border-radius:20px;
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(15px);
+box-shadow:0 0 40px rgba(0,0,0,0.5);
+text-align:center;
+color:#fff;
+position:relative;
+z-index:1;
+}
+
+/* TITLE */
+h2{
+margin-bottom:20px;
+letter-spacing:1px;
+}
+
+/* INPUT */
+.input-box{
+display:flex;
+align-items:center;
+background:rgba(255,255,255,0.1);
+padding:12px;
+border-radius:10px;
+margin-bottom:15px;
+transition:0.3s;
+}
+
+.input-box:hover{
+background:rgba(255,255,255,0.2);
+}
+
+.input-box i{
+margin-right:10px;
+cursor:pointer;
+}
+
+.input-box input{
+background:none;
+border:none;
+outline:none;
+color:#fff;
+width:100%;
+font-size:14px;
+}
+
+/* ERROR */
+.error{
+color:#ff6b6b;
+font-size:13px;
+margin-bottom:10px;
+display:none;
+}
+
+/* BUTTON */
+.btn{
+width:100%;
+padding:12px;
+border:none;
+border-radius:30px;
+background:linear-gradient(90deg,#00c6ff,#0072ff,#8e2de2);
+color:#fff;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #00c6ff;
+}
+
+/* LINK */
+.link{
+margin-top:15px;
+font-size:14px;
+}
+
+.link a{
+color:#00c6ff;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h2>Create Account 🔐</h2>
+
+<div class="input-box">
+<i class="material-icons">person</i>
+<input type="text" id="name" placeholder="Full Name">
+</div>
+
+<div class="input-box">
+<i class="material-icons">email</i>
+<input type="email" id="email" placeholder="Email">
+</div>
+
+<div class="input-box">
+<i class="material-icons" onclick="togglePassword('password')">visibility</i>
+<input type="password" id="password" placeholder="Password">
+</div>
+
+<div class="input-box">
+<i class="material-icons" onclick="togglePassword('confirmPassword')">visibility</i>
+<input type="password" id="confirmPassword" placeholder="Confirm Password">
+</div>
+
+<div class="error" id="errorMsg"></div>
+
+<button class="btn" onclick="registerUser()">Register</button>
+
+<div class="link">
+Already have account? <a href="sign in.html">Login</a>
+</div>
+
+</div>
+
+<script>
+
+function togglePassword(id){
+let input = document.getElementById(id);
+input.type = input.type === "password" ? "text" : "password";
+}
+
+function registerUser(){
+
+let name = document.getElementById("name").value.trim();
+let email = document.getElementById("email").value.trim();
+let pass = document.getElementById("password").value;
+let confirm = document.getElementById("confirmPassword").value;
+let error = document.getElementById("errorMsg");
+
+error.style.display="none";
+
+/* EMPTY CHECK */
+if(!name || !email || !pass || !confirm){
+error.innerText="⚠ Please fill all fields!";
+error.style.display="block";
+return;
+}
+
+/* PASSWORD LENGTH */
+if(pass.length < 6){
+error.innerText="⚠ Password must be at least 6 characters!";
+error.style.display="block";
+return;
+}
+
+/* MATCH CHECK */
+if(pass !== confirm){
+error.innerText="⚠ Passwords do not match!";
+error.style.display="block";
+return;
+}
+
+/* SAVE DATA */
+let user = {name,email,password:pass};
+localStorage.setItem("user", JSON.stringify(user));
+
+alert("🎉 Registration Successful!");
+
+/* REDIRECT */
+window.location.href = "index.html";
+
+}
+
+</script>
+
+</body>
+</html>

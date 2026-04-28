@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Password Safety Learning</title>
+
+<style>
+body {
+  font-family: Arial;
+  background: #f4f6fb;
+  margin: 0;
+}
+
+/* Learning Hub */
+.LearningHub {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Learning Page */
+.learning-page {
+  display: none;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.learning-page h3 {
+  margin-top: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  width: 250px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- ================= CARD ================= -->
+<div class="LearningHub">
+  <h2>Learning Hub</h2>
+
+  <div class="card" onclick="openPassword()">
+    <h3>Password Safety</h3>
+    <p>Strong password protection</p>
+  </div>
+</div>
+
+<!-- ================= PASSWORD PAGE ================= -->
+<div id="passwordPage" class="learning-page">
+
+  <h1>Password Safety</h1>
+
+  <!-- Section 1 -->
+  <h3>📘 What is Password Safety?</h3>
+  <p>
+    Password safety means creating strong and secure passwords to protect your personal 
+    and financial accounts from hackers.
+  </p>
+
+  <!-- Section 2 -->
+  <h3>⚠️ Common Mistakes</h3>
+  <ul>
+    <li>Using simple passwords like 123456</li>
+    <li>Using same password everywhere</li>
+    <li>Sharing password with others</li>
+    <li>Saving passwords in unsafe places</li>
+  </ul>
+
+  <!-- Section 3 -->
+  <h3>🔐 Check Your Password Strength</h3>
+  <input type="text" id="passwordInput" placeholder="Enter your password">
+  <br>
+  <button onclick="checkStrength()">Check Strength</button>
+
+  <p id="strengthResult"></p>
+
+  <!-- Section 4 -->
+  <h3>💡 Safety Tips</h3>
+  <button onclick="showTips()">Show Tips</button>
+  <div id="tipsBox"></div>
+
+  <!-- Section 5 -->
+  <h3>🧠 Quick Quiz</h3>
+  <p>Which password is strongest?</p>
+
+  <button onclick="checkAnswer('wrong')">123456</button>
+  <button onclick="checkAnswer('correct')">Ab@12Xy9!</button>
+
+  <p id="quizResult"></p>
+
+  <br><br>
+  <button onclick="goBack()">⬅ Back</button>
+
+</div>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+function openPassword() {
+  document.querySelector('.LearningHub').style.display = 'none';
+  document.getElementById('passwordPage').style.display = 'block';
+}
+
+function goBack() {
+  document.querySelector('.LearningHub').style.display = 'block';
+  document.getElementById('passwordPage').style.display = 'none';
+}
+
+// Password Strength Checker
+function checkStrength() {
+  let pass = document.getElementById('passwordInput').value;
+  let result = document.getElementById('strengthResult');
+
+  let strength = 0;
+
+  if (pass.length >= 8) strength++;
+  if (/[A-Z]/.test(pass)) strength++;
+  if (/[0-9]/.test(pass)) strength++;
+  if (/[@$!%*?&]/.test(pass)) strength++;
+
+  if (strength <= 1) {
+    result.innerText = "Weak ❌";
+    result.style.color = "red";
+  } else if (strength == 2 || strength == 3) {
+    result.innerText = "Medium ⚠️";
+    result.style.color = "orange";
+  } else {
+    result.innerText = "Strong ✅";
+    result.style.color = "green";
+  }
+}
+
+// Show Tips
+function showTips() {
+  document.getElementById('tipsBox').innerHTML = `
+    <ul>
+      <li>Use at least 8-12 characters</li>
+      <li>Include uppercase, numbers & symbols</li>
+      <li>Never reuse passwords</li>
+      <li>Use password manager if possible</li>
+    </ul>
+  `;
+}
+
+// Quiz
+function checkAnswer(ans) {
+  let result = document.getElementById('quizResult');
+
+  if (ans === 'correct') {
+    result.innerText = "Correct ✅ Strong password!";
+    result.style.color = "green";
+  } else {
+    result.innerText = "Wrong ❌ Too weak!";
+    result.style.color = "red";
+  }
+}
+</script>
+
+</body>
+</html>

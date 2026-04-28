@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>QR Code Safety</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#eef2ff,#f8fafc,#f0f9ff);
+}
+
+/* CONTAINER */
+.container{
+max-width:1000px;
+margin:30px auto;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.hero img{
+width:220px;
+}
+
+h1{
+color:#4f46e5;
+margin:0;
+}
+
+.sub{
+color:#64748b;
+margin-top:6px;
+}
+
+/* SECTION */
+.section{
+background:#f8fafc;
+padding:18px;
+border-radius:16px;
+margin-top:20px;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+gap:15px;
+margin-top:15px;
+}
+
+.feature{
+flex:1;
+background:white;
+padding:15px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* FLOW */
+.flow{
+display:flex;
+gap:10px;
+overflow-x:auto;
+align-items:center;
+margin-top:15px;
+}
+
+.step{
+min-width:140px;
+background:white;
+padding:12px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 4px 8px rgba(0,0,0,0.05);
+}
+
+.arrow{
+font-size:18px;
+color:#6366f1;
+}
+
+/* WARNING & SAFETY CARDS */
+.flex{
+display:flex;
+gap:15px;
+margin-top:20px;
+}
+
+.warn{
+flex:1;
+background:linear-gradient(135deg,#fee2e2,#fecaca);
+padding:15px;
+border-radius:14px;
+}
+
+.safe{
+flex:1;
+background:linear-gradient(135deg,#dcfce7,#bbf7d0);
+padding:15px;
+border-radius:14px;
+}
+
+/* LIST STYLE */
+ul{
+padding-left:18px;
+}
+
+/* FOOTER */
+.footer{
+margin-top:20px;
+text-align:center;
+color:#64748b;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:#4f46e5;
+color:white;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+<div>
+<h1>📷 QR Scam</h1>
+<p class="sub">Scan Smart • Stay Safe</p>
+
+<p>
+<b>QR (Quick Response)</b> code is a type of barcode that stores payment or link information.
+You scan it using your phone camera or payment app.
+</p>
+
+</div>
+
+<img src="Screenshot 2026-04-24 134410.png">
+</div>
+
+<!-- WHAT IS QR -->
+<div class="section">
+
+<h3>📘 What is QR Code?</h3>
+
+<p>
+QR Code is used for fast digital actions like payments, login, or opening links instantly.
+</p>
+
+<div class="features">
+
+<div class="feature">📱 Scan with camera</div>
+<div class="feature">💳 Used in payments</div>
+<div class="feature">🔗 Opens links instantly</div>
+
+</div>
+
+</div>
+
+<!-- FLOW -->
+<div class="section">
+
+<h3>⚠️ How QR Scam Happens</h3>
+
+<div class="flow">
+
+<div class="step">Scan QR</div>
+<div class="arrow">➡️</div>
+<div class="step">Fake Payment Request</div>
+<div class="arrow">➡️</div>
+<div class="step">You Approve</div>
+<div class="arrow">➡️</div>
+<div class="step">Money Lost ❌</div>
+
+</div>
+
+</div>
+
+<!-- HOW TO USE -->
+<div class="section">
+
+<h3>📱 How QR Scan Works</h3>
+
+<div class="flow">
+
+<div class="step">Open camera / app</div>
+<div class="arrow">➡️</div>
+<div class="step">Point to QR</div>
+<div class="arrow">➡️</div>
+<div class="step">Scan detected</div>
+<div class="arrow">➡️</div>
+<div class="step">Check details</div>
+
+</div>
+
+</div>
+
+<!-- WARNING + SAFETY -->
+<div class="flex">
+
+<div class="warn">
+<h3>❌ Warning Signs</h3>
+<ul>
+<li>Unknown QR codes</li>
+<li>Urgent payment requests</li>
+<li>"Receive money" trick</li>
+<li>Random QR messages</li>
+</ul>
+</div>
+
+<div class="safe">
+<h3>✅ Safety Tips</h3>
+<ul>
+<li>Always verify before scanning</li>
+<li>Use trusted QR only</li>
+<li>Check receiver name</li>
+<li>Never scan blindly</li>
+</ul>
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+💡 Stay alert, stay safe
+<br><br>
+<button onclick="history.back()">⬅ Back</button>
+</div>
+
+</div>
+
+</body>
+</html>

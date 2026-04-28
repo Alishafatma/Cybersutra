@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shopping Fraud Learning</title>
+
+<style>
+body { font-family: Arial; background: #f4f6fb; margin: 0; }
+.LearningHub { padding: 20px; }
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.card:hover { transform: scale(1.05); }
+
+.learning-page {
+  display: none;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  background: #6c63ff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="LearningHub">
+  <h2>Learning Hub</h2>
+
+  <div class="card" onclick="openShop()">
+    <h3>Shopping Fraud</h3>
+    <p>Fake online deals</p>
+  </div>
+</div>
+
+<div id="shopPage" class="learning-page">
+
+  <h1>Online Shopping Fraud</h1>
+
+  <h3>📘 What is Shopping Fraud?</h3>
+  <p>Fake websites or sellers trick users with huge discounts and steal money.</p>
+
+  <h3>⚠️ How It Works</h3>
+  <ul>
+    <li>Fake website shows big discounts</li>
+    <li>You pay online</li>
+    <li>Product never arrives</li>
+  </ul>
+
+  <h3>🚨 Warning Signs</h3>
+  <ul>
+    <li>Too good to be true offers</li>
+    <li>No reviews</li>
+    <li>Unknown websites</li>
+  </ul>
+
+  <h3>💡 Safety Tips</h3>
+  <button onclick="showTips()">Show Tips</button>
+  <div id="tipsBox"></div>
+
+  <h3>🧠 Quiz</h3>
+  <p>Huge discount + no reviews. Safe?</p>
+  <button onclick="checkAnswer('wrong')">Yes</button>
+  <button onclick="checkAnswer('correct')">No</button>
+
+  <p id="quizResult"></p>
+
+  <button onclick="goBack()">⬅ Back</button>
+
+</div>
+
+<script>
+function openShop() {
+  document.querySelector('.LearningHub').style.display = 'none';
+  document.getElementById('shopPage').style.display = 'block';
+}
+
+function goBack() {
+  document.querySelector('.LearningHub').style.display = 'block';
+  document.getElementById('shopPage').style.display = 'none';
+}
+
+function showTips() {
+  document.getElementById('tipsBox').innerHTML = `
+    <ul>
+      <li>Check website authenticity</li>
+      <li>Read reviews</li>
+      <li>Avoid advance payment</li>
+      <li>Use trusted platforms</li>
+    </ul>`;
+}
+
+function checkAnswer(ans) {
+  let r = document.getElementById('quizResult');
+  if (ans === 'correct') {
+    r.innerText = "Correct ✅";
+    r.style.color = "green";
+  } else {
+    r.innerText = "Wrong ❌ Be careful!";
+    r.style.color = "red";
+  }
+}
+</script>
+
+</body>
+</html>
